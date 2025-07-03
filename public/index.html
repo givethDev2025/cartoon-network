@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cartoon Network</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-blue: #3a5fcd;
+      --primary-pink: #ff4081;
+      --dark-bg: #0e1128;
+      --light-text: #f0f4ff;
+      --glow-blue: #3a5fcd88;
+      --glow-pink: #ff408188;
+      --button-shadow: #ff4081aa;
+    }
+
+    /* Background with diagonal stripes */
+    body {
+      margin: 0;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+      background-color: var(--dark-bg);
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          rgba(58,95,205,0.1),
+          rgba(58,95,205,0.1) 10px,
+          rgba(255,64,129,0.1) 10px,
+          rgba(255,64,129,0.1) 20px
+        );
+      color: var(--light-text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem 1rem 3rem;
+      user-select: none;
+    }
+
+    header {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-blue), var(--primary-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s linear infinite;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      width: 100%;
+      max-width: 720px;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -500% 0;
+      }
+      100% {
+        background-position: 500% 0;
+      }
+    }
+
+    /* Back button */
+    .back-button {
+      background: var(--primary-pink);
+      box-shadow: 0 0 15px var(--button-shadow);
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 0.8rem 2rem;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      user-select: none;
+      box-sizing: border-box;
+    }
+
+    .back-button:hover,
+    .back-button:focus {
+      transform: scale(1.1) rotate(-3deg);
+      box-shadow:
+        0 0 25px var(--button-shadow),
+        0 0 35px var(--button-shadow);
+      outline: none;
+    }
+
+    .back-button:active {
+      transform: scale(0.95) rotate(0deg);
+      box-shadow: 0 0 15px var(--button-shadow);
+    }
+
+    /* Video styling */
+    video {
+      max-width: 720px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow:
+        0 0 30px var(--glow-blue),
+        inset 0 0 25px var(--glow-pink);
+      border: 4px solid var(--primary-pink);
+      background-color: #111a3a;
+      transition: box-shadow 0.5s ease;
+    }
+
+    video:hover {
+      box-shadow:
+        0 0 45px var(--glow-pink),
+        inset 0 0 35px var(--glow-blue);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      header {
+        font-size: 2.4rem;
+      }
+      .back-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Cartoon Network</header>
+
+  <a href="https://giveth2024.github.io/MyTV/index.html" class="back-button" aria-label="Go back to main TV page">
+    ← Back to MyTV
+  </a>
+
+  <video id="video" controls autoplay playsinline></video>
+
+  <script src="script.js"></script>
+</body>
+</html>

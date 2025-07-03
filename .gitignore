@@ -1,0 +1,34 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build output (if you compile JS/CSS)
+dist/
+build/
+
+# Environment variables (e.g. for API keys)
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Optional: editor/IDE files
+.vscode/
+.idea/
+*.swp
+
+# OS-related
+*.sublime-workspace
+*.sublime-project
+
+# Frontend cache
+.cache/
+.next/
+out/
